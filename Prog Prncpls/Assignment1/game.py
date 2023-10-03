@@ -44,7 +44,7 @@ def quest(r1):
                     attrb[challengeIdx - 1] = result
                     print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2],'\n')
                     challengeIdx += 1
-            
+                    
             elif roll.lower() == 'giveup':
                 print('Game Over')
                 break
