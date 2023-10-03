@@ -21,3 +21,16 @@ def attrb():
     attrb.append(iq)
     return attrb
 
+def challenges(c1):
+    challenge1 = 'you need to get out of your cell,\n you have to steal the keys to the cell from the guard | (you need a 6 or higher to win)'
+    challenge2 = "Great now that your out of your cell you need to get to the security room and take out the guard make sure you don't get caught!(roll more than a 8 or you get caught)"
+    challenge3 = "Your alsmost out, you just need to get over the fence but remeber you need to wait for james's signal(roll less than 6 or you won't get the signal)"
+    if c1 == 1: 
+        print(challenge1) 
+    elif c1 == 2:
+        print(challenge2)
+
+    elif c1 == 3:
+        print(challenge3)
+        
+    
