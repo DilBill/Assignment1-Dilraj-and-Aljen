@@ -61,6 +61,46 @@ def load():
     os.system('clear')
     return 
 
+'''The charSelect allows the user to select a role from the ones presented,
+when a user selects a role they will then be presented with the loading screen
+and then the bio of the role for example the age, name and background story'''
+def charSelect(choice):
+    while True:
+        # function that allows the user to choice a role and than retrives the attributes from role1 or role2
+        if choice == '1':
+            load()
+            role1.bio()
+            attrb = role1.attrb()
+            print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2],'\n')
+        
+        elif choice == '2':
+            load()
+            role2.bio()
+            attrb = role2.attrb()
+            print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2],'\n')
+        else:
+            print('Invaild Try Again')
+        return 
+
+
+load()
+while True:
+    userStrt = mainMenu()
+    if userStrt == 's':
+        load()
+        welcomeMsg()
+
+        choice = input('Which character would you like to choose? | 1 for Mason | 2 for James: ')
+
+        charSelect(choice)
+        game.quest(choice)
+    elif userStrt == 'q':
+        print('You Have Quit')
+        break
+
+
+    
+
 
 
     
