@@ -34,3 +34,19 @@ def challenges(c1):
         print(challenge3)
         
     
+def challengeOutcome(c1):
+    if c1 == 1: 
+        c1Loss = "the guard caught you trying to make a hole"
+        c1Win = "you got the keys good job!"
+        return c1Win,c1Loss
+        
+    elif c1 == 2:
+        c2Loss = "the guard spotted you"
+        c2Win = "you took the guard down good job!"
+        return c2Win,c2Loss
+        
+    elif c1 == 3:
+        c3Loss = "you were inpatient and got caught"
+        c3Win = "you ESCAPED!"   
+        return c3Win, c3Loss
+    
