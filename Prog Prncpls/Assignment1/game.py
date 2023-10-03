@@ -52,4 +52,44 @@ def quest(r1):
             elif roll.lower() != 'roll' or roll.lower() != 'giveup':
                 print('\nInvaild Try again\n')
             
+    elif r1 == '2':
+        attrb = role2.attrb()
+        result = 0
+        while challengeIdx != 4:
+            role2.challenges(challengeIdx)
+            outcome = role2.challengeOutcome(challengeIdx)
+            roll = input("do you want to roll the dice or do you want to give up? (roll/giveup) ")
+            
+            if roll.lower() == 'roll':
+                rolled = diceRoll()
+                os.system('clear')
+                
+                if rolled < 6 + challengeIdx - 1:
+                    print("\n",outcome[1],'Challenge lost')
+                    result = attrb[challengeIdx - 1]
+                    result -= 1
+                    attrb[challengeIdx - 1] = result
+                    print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2])
+                    challengeIdx += 1
+                    
+                elif rolled >= 6 + challengeIdx:
+                    print("\n",outcome[0])
+                    result = attrb[challengeIdx - 1]
+                    result += 1
+                    attrb[challengeIdx - 1] = result
+                    print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2])
+                    challengeIdx += 1
+                
+            elif roll.lower() == 'giveup':
+                print('Game Over')
+                break
+                
+            elif roll.lower() != 'roll' or roll.lower() != 'giveup':
+                print('\nInvaild Try again\n')                   
+    return
+    
+    
+
+
+        
     
