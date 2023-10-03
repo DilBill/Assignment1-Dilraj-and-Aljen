@@ -10,4 +10,3 @@ def diceRoll():
     # function to roll the dice
     return (random.randint(2, 12))
 
-
