@@ -37,10 +37,19 @@ def quest(r1):
                     print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2],'\n')
                     challengeIdx += 1
                     
-
-    
-    
-
-
-        
+                elif rolled >= 6 + challengeIdx:
+                    print("\n",outcome[0])
+                    result = attrb[challengeIdx - 1]
+                    result += 1
+                    attrb[challengeIdx - 1] = result
+                    print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2],'\n')
+                    challengeIdx += 1
+            
+            elif roll.lower() == 'giveup':
+                print('Game Over')
+                break
+                
+            elif roll.lower() != 'roll' or roll.lower() != 'giveup':
+                print('\nInvaild Try again\n')
+            
     
