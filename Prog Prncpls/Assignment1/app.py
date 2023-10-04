@@ -34,6 +34,34 @@ def welcomeMsg():
     plotting an elaborate escape plan that would test their wits, their courage, and their loyalty.
  '''
     print(msg)
+    
+'''The load function is used for displaying a simple loading screen whihc is just for asthetics 
+when this function is called the user will be shown a loading screen that will run for 10 - 20 secs'''
+def load():
+    #simple animation for smoother transtions between function
+    startMsg1 = 'Loading /'
+    startMsg2 = 'Loading -'
+    startMsg3 = 'Loading \\'
+    startMsg4 = 'Loading |'
+    numLoop = 0
+    while numLoop <= 3:
+        time.sleep(0.5)
+        os.system('clear')
+        print(startMsg1)
+        time.sleep(0.5)
+        os.system('clear')
+        print(startMsg2)
+        time.sleep(0.5)
+        os.system('clear')
+        print(startMsg3)
+        time.sleep(0.5)
+        os.system('clear')
+        print(startMsg4)
+        numLoop += 1
+    os.system('clear')
+    return 
+
+
 
 
     
