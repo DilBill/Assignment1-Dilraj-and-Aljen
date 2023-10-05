@@ -2,17 +2,21 @@ import os
 import time
 import role1,role2,game
 
-
+'''The mainMenu function will show the user a basic menu that will allow them to either start the game quit or read the rules,
+If the user wants to read the rules they will be redreicted to the mainmenu to either start or quit'''
 def mainMenu():
     while True:
+        #show the user the options they have and allow them to input their choice
         userIn = input("\n    S to Start\n    Q to Quit\n    R for Rules\n\n --> ")
-        os.system('cls')
+        # os.system('cls') is used to clear the terminal 
+        os.system('clear')
         if userIn.lower() == 's':
             return userIn
         elif userIn.lower() == 'q':
             return userIn
         elif userIn.lower() == 'r':
             print("Rules: \n    In this game everything is done with a pair of dice,\n Each role has their own atrrbs and challenges\n Each Challenge corelates to a atrrb\n if you win the challenge the atrrb will rise if you lose it will lower the atrrb. \n Also if you are to fail the challenge then you will be brought to the next challenge as if you had won the previous one")
+            #If the user does not input a vaild value they well be asked to try again
         elif userIn != 's' or userIn != 'q' or userIn != 'r':
             print('Invaild Try Again')
             
@@ -21,7 +25,7 @@ so that they can get a breif understanding of what is going on, Also I use
 os.system('clear') to clear the terminal so that as the program starts the user gets a clear display'''
 def welcomeMsg():
     # prints the story and roles to the user
-    os.system('cls')
+    os.system('clear')
     msg = '''    Welcome to Cell Block-C
     In this game your goal is to escape the prison
     
@@ -35,7 +39,7 @@ def welcomeMsg():
  '''
     print(msg)
     
-'''The load function is used for displaying a simple loading screen whihc is just for asthetics 
+'''The load function is used for displaying a simple loading screen which is just for asthetics 
 when this function is called the user will be shown a loading screen that will run for 10 - 20 secs'''
 def load():
     #simple animation for smoother transtions between function
@@ -45,20 +49,23 @@ def load():
     startMsg4 = 'Loading |'
     numLoop = 0
     while numLoop <= 3:
+        # time.sleep(0.5) is used to to pause the program for the give time in seconds
         time.sleep(0.5)
-        os.system('cls')
+        # we then clear the terminal
+        os.system('clear')
+        # then we print the message
         print(startMsg1)
         time.sleep(0.5)
-        os.system('cls')
+        os.system('clear')
         print(startMsg2)
         time.sleep(0.5)
-        os.system('cls')
+        os.system('clear')
         print(startMsg3)
         time.sleep(0.5)
-        os.system('cls')
+        os.system('clear')
         print(startMsg4)
         numLoop += 1
-    os.system('cls')
+    os.system('clear')
     return 
 
 '''The charSelect allows the user to select a role from the ones presented,
@@ -68,9 +75,13 @@ def charSelect(choice):
     while True:
         # function that allows the user to choice a role and than retrives the attributes from role1 or role2
         if choice == '1':
+            # run the load function for effect
             load()
+            # we then call the function bio from the role1 or 2 file
             role1.bio()
+            #we store the attrbs into a list called attrb
             attrb = role1.attrb()
+            # then print the attrbs to the user
             print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2],'\n')
         
         elif choice == '2':
@@ -85,16 +96,20 @@ def charSelect(choice):
 
 load()
 while True:
+    # call the function mainMenu and store it to userStrt
     userStrt = mainMenu()
     if userStrt == 's':
         load()
+        # call the welcomeMsg function
         welcomeMsg()
-
+        # ask the user what character they want to use
         choice = input('Which character would you like to choose? | 1 for Mason | 2 for James: ')
-
+        # call the charSelect function and pass choice as the parameter
         charSelect(choice)
+        # call the quest function from the game.py file and pass choice as the parameter
         game.quest(choice)
     elif userStrt == 'q':
+        # if the user decides to quit then print "you have quit" and then break
         print('You Have Quit')
         break
 
