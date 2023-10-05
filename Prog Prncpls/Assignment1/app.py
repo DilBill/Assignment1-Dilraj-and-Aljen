@@ -1,15 +1,24 @@
-import os
-import time
+import os,time,platform
 import role1,role2,game
+
+'''this function is used to quickly check what os the user is using '''
+def osChecker():
+    clean = ''
+    if platform.system() == "Windows":
+        clean = 'cls'
+    elif platform.system() == "macOS":
+        clean = 'clear'
+    
+    return clean
 
 '''The mainMenu function will show the user a basic menu that will allow them to either start the game quit or read the rules,
 If the user wants to read the rules they will be redreicted to the mainmenu to either start or quit'''
-def mainMenu():
+def mainMenu(clean):
     while True:
         #show the user the options they have and allow them to input their choice
         userIn = input("\n    S to Start\n    Q to Quit\n    R for Rules\n\n --> ")
         # os.system('cls') is used to clear the terminal 
-        os.system('clear')
+        os.system(clean)
         if userIn.lower() == 's':
             return userIn
         elif userIn.lower() == 'q':
@@ -23,9 +32,9 @@ def mainMenu():
 '''The welcomeMsg function is used to print the intro stroy to the user,
 so that they can get a breif understanding of what is going on, Also I use 
 os.system('clear') to clear the terminal so that as the program starts the user gets a clear display'''
-def welcomeMsg():
+def welcomeMsg(clean):
     # prints the story and roles to the user
-    os.system('clear')
+    os.system(clean)
     msg = '''    Welcome to Cell Block-C
     In this game your goal is to escape the prison
     
@@ -41,7 +50,7 @@ def welcomeMsg():
     
 '''The load function is used for displaying a simple loading screen which is just for asthetics 
 when this function is called the user will be shown a loading screen that will run for 10 - 20 secs'''
-def load():
+def load(clean):
     #simple animation for smoother transtions between function
     startMsg1 = 'Loading /'
     startMsg2 = 'Loading -'
@@ -52,20 +61,20 @@ def load():
         # time.sleep(0.5) is used to to pause the program for the give time in seconds
         time.sleep(0.5)
         # we then clear the terminal
-        os.system('clear')
+        os.system(clean)
         # then we print the message
         print(startMsg1)
         time.sleep(0.5)
-        os.system('clear')
+        os.system(clean)
         print(startMsg2)
         time.sleep(0.5)
-        os.system('clear')
+        os.system(clean)
         print(startMsg3)
         time.sleep(0.5)
-        os.system('clear')
+        os.system(clean)
         print(startMsg4)
         numLoop += 1
-    os.system('clear')
+    os.system(clean)
     return 
 
 '''The charSelect allows the user to select a role from the ones presented,
@@ -93,21 +102,21 @@ def charSelect(choice):
             print('Invaild Try Again')
         return 
 
-
+clean = osChecker()
 load()
 while True:
     # call the function mainMenu and store it to userStrt
     userStrt = mainMenu()
     if userStrt == 's':
-        load()
+        load(clean)
         # call the welcomeMsg function
-        welcomeMsg()
+        welcomeMsg(clean)
         # ask the user what character they want to use
         choice = input('Which character would you like to choose? | 1 for Mason | 2 for James: ')
         # call the charSelect function and pass choice as the parameter
         charSelect(choice)
         # call the quest function from the game.py file and pass choice as the parameter
-        game.quest(choice)
+        game.quest(choice,clean)
     elif userStrt == 'q':
         # if the user decides to quit then print "you have quit" and then break
         print('You Have Quit')
