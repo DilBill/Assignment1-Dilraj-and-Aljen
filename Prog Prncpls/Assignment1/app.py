@@ -5,10 +5,9 @@ import role1,role2,game
 def osChecker():
     clean = ''
     if platform.system() == "Windows":
-        clean = 'cls'
-    elif platform.system() == "macOS":
-        clean = 'clear'
-    
+        clean = "cls"
+    if platform.system() == "Darwin":
+        clean = "clear"
     return clean
 
 '''The mainMenu function will show the user a basic menu that will allow them to either start the game quit or read the rules,
@@ -80,21 +79,21 @@ def load(clean):
 '''The charSelect allows the user to select a role from the ones presented,
 when a user selects a role they will then be presented with the loading screen
 and then the bio of the role for example the age, name and background story'''
-def charSelect(choice):
+def charSelect(choice,clean):
     while True:
         # function that allows the user to choice a role and than retrives the attributes from role1 or role2
         if choice == '1':
             # run the load function for effect
-            load()
+            load(clean)
             # we then call the function bio from the role1 or 2 file
-            role1.bio()
+            role1.bio(clean)
             #we store the attrbs into a list called attrb
-            attrb = role1.attrb()
+            attrb = role1.attrb(clean)
             # then print the attrbs to the user
             print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2],'\n')
         
         elif choice == '2':
-            load()
+            load(clean)
             role2.bio()
             attrb = role2.attrb()
             print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2],'\n')
@@ -103,10 +102,10 @@ def charSelect(choice):
         return 
 
 clean = osChecker()
-load()
+load(clean)
 while True:
     # call the function mainMenu and store it to userStrt
-    userStrt = mainMenu()
+    userStrt = mainMenu(clean)
     if userStrt == 's':
         load(clean)
         # call the welcomeMsg function
@@ -114,7 +113,7 @@ while True:
         # ask the user what character they want to use
         choice = input('Which character would you like to choose? | 1 for Mason | 2 for James: ')
         # call the charSelect function and pass choice as the parameter
-        charSelect(choice)
+        charSelect(choice,clean)
         # call the quest function from the game.py file and pass choice as the parameter
         game.quest(choice,clean)
     elif userStrt == 'q':
