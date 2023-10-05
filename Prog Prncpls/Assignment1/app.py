@@ -6,7 +6,7 @@ import role1,role2,game
 def mainMenu():
     while True:
         userIn = input("\n    S to Start\n    Q to Quit\n    R for Rules\n\n --> ")
-        os.system('clear')
+        os.system('cls')
         if userIn.lower() == 's':
             return userIn
         elif userIn.lower() == 'q':
@@ -21,7 +21,7 @@ so that they can get a breif understanding of what is going on, Also I use
 os.system('clear') to clear the terminal so that as the program starts the user gets a clear display'''
 def welcomeMsg():
     # prints the story and roles to the user
-    os.system('clear')
+    os.system('cls')
     msg = '''    Welcome to Cell Block-C
     In this game your goal is to escape the prison
     
@@ -46,19 +46,19 @@ def load():
     numLoop = 0
     while numLoop <= 3:
         time.sleep(0.5)
-        os.system('clear')
+        os.system('cls')
         print(startMsg1)
         time.sleep(0.5)
-        os.system('clear')
+        os.system('cls')
         print(startMsg2)
         time.sleep(0.5)
-        os.system('clear')
+        os.system('cls')
         print(startMsg3)
         time.sleep(0.5)
-        os.system('clear')
+        os.system('cls')
         print(startMsg4)
         numLoop += 1
-    os.system('clear')
+    os.system('cls')
     return 
 
 '''The charSelect allows the user to select a role from the ones presented,
