@@ -1,10 +1,10 @@
 '''Game.py -- this file holds all of the game data and logic so that it can later be accessed by app.py to be implemented '''
 
 # imports
-import time
 import os
 import random
 import role1, role2
+
 
 def diceRoll():
     # function to roll the dice
@@ -14,7 +14,7 @@ def diceRoll():
 '''The quest function allows the user to play the game as the quest function
 gathers information from either role1 or role2 and uses the load and diceRoll functions
 this function then uses conditonal statments to implement the game logic'''
-def quest(r1):
+def quest(r1,clean):
     challengeIdx = 1
     if r1 == '1':
         # creates a list to hold the attrbs of role10
@@ -30,7 +30,7 @@ def quest(r1):
             if roll.lower() == 'roll':
                 rolled = diceRoll()
                 # clears the terminal to allow for a clean display and a better user experince
-                os.system('clear')
+                os.system('clean')
                 # this conditional statement checks whether the player has won or not by comparing their score
                 if rolled < 6 + challengeIdx - 1:
                     # we are printing the outcome of the challenge with the list we created earlier
@@ -71,7 +71,7 @@ def quest(r1):
             
             if roll.lower() == 'roll':
                 rolled = diceRoll()
-                os.system('clear')
+                os.system('clean')
                 
                 if rolled < 6 + challengeIdx - 1:
                     print("\n",outcome[1],'Challenge lost')
