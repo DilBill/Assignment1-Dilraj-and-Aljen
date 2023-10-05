@@ -27,7 +27,7 @@ def quest(r1):
             
             if roll.lower() == 'roll':
                 rolled = diceRoll()
-                os.system('clear')
+                os.system('cls')
                 
                 if rolled < 6 + challengeIdx - 1:
                     print("\n",outcome[1],'Challenge lost')
@@ -62,7 +62,7 @@ def quest(r1):
             
             if roll.lower() == 'roll':
                 rolled = diceRoll()
-                os.system('clear')
+                os.system('cls')
                 
                 if rolled < 6 + challengeIdx - 1:
                     print("\n",outcome[1],'Challenge lost')
