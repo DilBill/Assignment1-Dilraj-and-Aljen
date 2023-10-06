@@ -86,9 +86,9 @@ def charSelect(choice,clean):
             # run the load function for effect
             load(clean)
             # we then call the function bio from the role1 or 2 file
-            role1.bio(clean)
+            role1.bio()
             #we store the attrbs into a list called attrb
-            attrb = role1.attrb(clean)
+            attrb = role1.attrb()
             # then print the attrbs to the user
             print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2],'\n')
         
