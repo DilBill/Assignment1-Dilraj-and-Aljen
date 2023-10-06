@@ -23,10 +23,11 @@ def mainMenu(clean):
         elif userIn.lower() == 'q':
             return userIn
         elif userIn.lower() == 'r':
-            print("Rules: \n    In this game everything is done with a pair of dice,\n Each role has their own atrrbs and challenges\n Each Challenge corelates to a atrrb\n if you win the challenge the atrrb will rise if you lose it will lower the atrrb. \n Also if you are to fail the challenge then you will be brought to the next challenge as if you had won the previous one")
+            os.system(clean)
+            print("Rules: \n    In this game everything is done with a pair of dice, \n Each role has their own attributes and challenges\n There are 3 challenges for each role. Each one is connected to a specific attribute\n If you win the challenge, the attribute will increase, if you lose it will decrease. \n If you are to fail the challenge then you will be brought to the next challenge as if you had won the previous one. ")
             #If the user does not input a vaild value they well be asked to try again
         elif userIn != 's' or userIn != 'q' or userIn != 'r':
-            print('Invaild Try Again')
+            print('Invalid. Try Again')
             
 '''The welcomeMsg function is used to print the intro stroy to the user,
 so that they can get a breif understanding of what is going on, Also I use 
@@ -56,20 +57,20 @@ def load(clean):
     startMsg3 = 'Loading \\'
     startMsg4 = 'Loading |'
     numLoop = 0
-    while numLoop <= 3:
+    while numLoop <= 2:
         # time.sleep(0.5) is used to to pause the program for the give time in seconds
-        time.sleep(0.5)
+        time.sleep(0.25)
         # we then clear the terminal
         os.system(clean)
         # then we print the message
         print(startMsg1)
-        time.sleep(0.5)
+        time.sleep(0.25)
         os.system(clean)
         print(startMsg2)
-        time.sleep(0.5)
+        time.sleep(0.25)
         os.system(clean)
         print(startMsg3)
-        time.sleep(0.5)
+        time.sleep(0.25)
         os.system(clean)
         print(startMsg4)
         numLoop += 1
@@ -98,7 +99,7 @@ def charSelect(choice,clean):
             attrb = role2.attrb()
             print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2],'\n')
         else:
-            print('Invaild Try Again')
+            print('Invalid. Try Again.')
         return 
 
 clean = osChecker()

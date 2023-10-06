@@ -5,9 +5,8 @@ Background: James Reynolds, known by his alias "Byte" in the underground hacking
 had always danced on the edge of legality. Raised in the bustling urban sprawl of a metropolis,
 he had an insatiable curiosity for all things digital from a young age. His affinity for computers
 and coding led him down a path few understood or dared to tread.
-Tech Savant: James was a self-taught tech savant, mastering the intricacies of computer systems, cryptography, and cybersecurity.
-His skills made him a sought-after figure in the cyber-underground, where he navigated the labyrinth of the dark web 
-and orchestrated hacks that often blurred the lines between activism and cybercrime.'''
+James was a self-taught tech savant, mastering the intricacies of computer systems, cryptography, and cybersecurity.
+His greatest attribute is his IQ.'''
     print(msg)
     
     
@@ -22,9 +21,9 @@ def attrb():
     return attrb
 
 def challenges(c1):
-    challenge1 = 'you need to get out of your cell,\n you have to steal the keys to the cell from the guard | (you need a 6 or higher to win)'
-    challenge2 = "Great now that your out of your cell you need to get to the security room and take out the guard make sure you don't get caught!(roll more than a 8 or you get caught)"
-    challenge3 = "Your alsmost out, you just need to get over the fence but remeber you need to wait for james's signal(roll less than 6 or you won't get the signal)"
+    challenge1 = "Challenge 1:\n You must escape your cell. You have to use your hacking skills to bypass the electronic lock in your cell.\n (roll higher than 6 to crack the system)"
+    challenge2 = "Challenge 2:\n You're out of your cell but you are surrounded by surveillance systems. You must disable the system to avoid detection.\n (roll higher than 7 to deactivate it)"
+    challenge3 = "Challenge 3:\n You're on the last obstacle. James is waiting for you on the other side but he needs help disabling the security protocol.\n (roll higher than 8 to help him)"
     if c1 == 1: 
         print(challenge1) 
     elif c1 == 2:
@@ -36,17 +35,17 @@ def challenges(c1):
     
 def challengeOutcome(c1):
     if c1 == 1: 
-        c1Loss = "the guard caught you trying to make a hole"
-        c1Win = "you got the keys good job!"
+        c1Loss = "Oh no! The alarms went off! You have been caught. -1 Strength!"
+        c1Win = "Great! You succesfully bypassed the locks. +1 Strength"
         return c1Win,c1Loss
         
     elif c1 == 2:
-        c2Loss = "the guard spotted you"
-        c2Win = "you took the guard down good job!"
+        c2Loss = "Beep! The camera spotted you. -1 Courage"
+        c2Win = "Awesome! The entire surveillance system is now disabled."
         return c2Win,c2Loss
         
     elif c1 == 3:
-        c3Loss = "you were inpatient and got caught"
-        c3Win = "you ESCAPED!"   
+        c3Loss = "Yikes! The nearby guard caught you. -1 IQ"
+        c3Win = "Woo! You and James have escaped. Freedom! +1 IQ"   
         return c3Win, c3Loss
     

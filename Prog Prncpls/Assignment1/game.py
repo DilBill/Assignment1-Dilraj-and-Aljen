@@ -25,16 +25,17 @@ def quest(r1,clean):
             role1.challenges(challengeIdx)
             # stores the possible outcomes to a list
             outcome = role1.challengeOutcome(challengeIdx)
-            roll = input("\ndo you want to roll the dice or do you want to give up? (roll/giveup) ")
+            roll = input("\nDo you want to roll the dice or do you want to give up? (roll/giveup) ")
             # the use if .lower() is to remove all capatials in the string to minimize errors
             if roll.lower() == 'roll':
                 rolled = diceRoll()
                 # clears the terminal to allow for a clean display and a better user experince
                 os.system(clean)
+                print('You rolled',rolled)
                 # this conditional statement checks whether the player has won or not by comparing their score
-                if rolled < 6 + challengeIdx - 1:
+                if rolled <= 7 + challengeIdx - 1:
                     # we are printing the outcome of the challenge with the list we created earlier
-                    print("\n",outcome[1],'Challenge lost')
+                    print("\n",outcome[1])
                     # we now want to change the attrb value down 1 as the user lost the challenge
                     result = attrb[challengeIdx - 1]
                     result -= 1
@@ -67,14 +68,15 @@ def quest(r1,clean):
         while challengeIdx != 4:
             role2.challenges(challengeIdx)
             outcome = role2.challengeOutcome(challengeIdx)
-            roll = input("do you want to roll the dice or do you want to give up? (roll/giveup) ")
+            roll = input("\nDo you want to roll the dice or do you want to give up? (roll/giveup) ")
             
             if roll.lower() == 'roll':
                 rolled = diceRoll()
                 os.system(clean)
+                print("You rolled: ", rolled)
                 
                 if rolled < 6 + challengeIdx - 1:
-                    print("\n",outcome[1],'Challenge lost')
+                    print("\n",outcome[1])
                     result = attrb[challengeIdx - 1]
                     result -= 1
                     attrb[challengeIdx - 1] = result
