@@ -1,5 +1,5 @@
 import os,time,platform
-import role1,role2,game
+import role1, role2, game
 
 '''this function is used to quickly check what os the user is using '''
 def osChecker():
@@ -24,7 +24,7 @@ def mainMenu(clean):
             return userIn
         elif userIn.lower() == 'r':
             os.system(clean)
-            print("Rules: \n    In this game everything is done with a pair of dice, \n Each role has their own attributes and challenges\n There are 3 challenges for each role. Each one is connected to a specific attribute\n If you win the challenge, the attribute will increase, if you lose it will decrease. \n If you are to fail the challenge then you will be brought to the next challenge as if you had won the previous one. ")
+            print("Rules: \n    In this game everything is done with a pair of dice, \n Each role has their own attributes and challenges\n There are 3 challenges for each role. Each one is connected to a specific attribute\n If you win the challenge, the attribute will increase, if you lose it will decrease. \n If you are to fail the challenge then you will be brought to the next challenge as if you had won the previous one. In order to win, you must get at least 3 in one of the attributes. ")
             #If the user does not input a vaild value they well be asked to try again
         elif userIn != 's' or userIn != 'q' or userIn != 'r':
             print('Invalid. Try Again')

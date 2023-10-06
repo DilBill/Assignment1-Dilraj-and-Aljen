@@ -33,7 +33,7 @@ def quest(r1,clean):
                 os.system(clean)
                 print('You rolled',rolled)
                 # this conditional statement checks whether the player has won or not by comparing their score
-                if rolled <= 7 + challengeIdx - 1:
+                if rolled < 7 + challengeIdx - 1:
                     # we are printing the outcome of the challenge with the list we created earlier
                     print("\n",outcome[1])
                     # we now want to change the attrb value down 1 as the user lost the challenge
@@ -63,8 +63,13 @@ def quest(r1,clean):
             elif roll.lower() != 'roll' or roll.lower() != 'giveup':
                 # checks if the user inputed a vaild value if not print "Invaild Try Again" and let them try again
                 print('\nInvaild Try Again\n')
-            if challengeIdx == 4:
+
+        if challengeIdx == 4 and attrb[0] == 3 or challengeIdx == 4 and attrb [1] == 3 or challengeIdx == 4 and attrb[2] == 3:
+                print('Well Done! You Won! You finished the game and had 3 points for an attribute!') 
+
+        elif challengeIdx == 4:
                 print('GAME OVER')
+            
             
     elif r1 == '2':
         attrb = role2.attrb()
@@ -103,8 +108,11 @@ def quest(r1,clean):
             elif roll.lower() != 'roll' or roll.lower() != 'giveup':
                 print('\nInvaild Try again\n') 
                 
-            if challengeIdx == 4:
-                print('GAME OVER')                  
+        if challengeIdx == 4 and attrb[0] == 3 or challengeIdx == 4 and attrb [1] == 3 or challengeIdx == 4 and attrb[2] == 3:
+                print('Well Done! You Won! You finished the game and had 3 points for an attribute') 
+
+        elif challengeIdx == 4:
+                print("GAME OVER....")            
     return
     
     

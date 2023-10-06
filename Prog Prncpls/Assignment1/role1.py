@@ -27,9 +27,9 @@ def attrb():
 '''the challenges function creates the roles own challenges 
 which will then be print depending on the parameter c1 (e.g. if c1 == 1 --> print challenge1)'''
 def challenges(c1):
-    challenge1 = 'Challenge 1:\nYou need to get out of your cell, you must steal the keys to the cell from the guard.\n(you need a 6 or higher to obtain the keys)'
-    challenge2 = "Challenge 2:\nYou need to get to the security room and take out the guard. Make sure you don't get caught!\n(roll more than a 7 or you'll get caught)"
-    challenge3 = "Challenge 3:\nYou are almost out, you just need to get over the fence but remember, you need to wait for James's signal\n(roll more than 8 or you won't get the signal)"
+    challenge1 = 'Challenge 1:\nYou need to get out of your cell, you must steal the keys to the cell from the guard.\n(you need a 6 or higher to obtain the keys): '
+    challenge2 = "Challenge 2:\nYou need to get to the security room and take out the guard. Make sure you don't get caught!\n(Roll more than a 7 or you'll get caught): "
+    challenge3 = "Challenge 3:\nYou are almost out, you just need to get over the fence but remember, you need to wait for James's signal\n(Roll more than 8 or you won't get the signal): "
     if c1 == 1: 
         print(challenge1) 
     elif c1 == 2:
