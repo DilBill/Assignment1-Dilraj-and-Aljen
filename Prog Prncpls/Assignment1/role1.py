@@ -44,7 +44,7 @@ def challenges(c1):
 '''the challengeOutcome function returns the outcome of the challenge based on what you rolled with the diceRoll function'''   
 def challengeOutcome(c1):
     if c1 == 1: 
-        c1Loss = "the guard caught you trying to make a hole"
+        c1Loss = "the guard caught you trying to steal his keys"
         c1Win = "you got the keys good job!"
         return c1Win,c1Loss
         
