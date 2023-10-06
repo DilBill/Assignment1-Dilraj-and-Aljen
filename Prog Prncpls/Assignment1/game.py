@@ -61,6 +61,8 @@ def quest(r1,clean):
             elif roll.lower() != 'roll' or roll.lower() != 'giveup':
                 # checks if the user inputed a vaild value if not print "Invaild Try Again" and let them try again
                 print('\nInvaild Try Again\n')
+            if challengeIdx == 4:
+                print('GAME OVER')
             
     elif r1 == '2':
         attrb = role2.attrb()
@@ -96,7 +98,10 @@ def quest(r1,clean):
                 break
                 
             elif roll.lower() != 'roll' or roll.lower() != 'giveup':
-                print('\nInvaild Try again\n')                   
+                print('\nInvaild Try again\n') 
+                
+            if challengeIdx == 4:
+                print('GAME OVER')                  
     return
     
     
