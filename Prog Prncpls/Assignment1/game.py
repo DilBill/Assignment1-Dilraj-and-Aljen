@@ -55,7 +55,9 @@ def quest(r1,clean):
             
             elif roll.lower() == 'giveup':
                 # if the user wants to stop then print "Game Over" and break out the loop
-                print('Game Over')
+                os.system(clean)
+                print('You gave up. Back to starting screen.')
+                
                 break
                 
             elif roll.lower() != 'roll' or roll.lower() != 'giveup':
@@ -77,12 +79,12 @@ def quest(r1,clean):
                 os.system(clean)
                 print("You rolled: ", rolled)
                 
-                if rolled < 6 + challengeIdx - 1:
+                if rolled <= 7 + challengeIdx - 1:
                     print("\n",outcome[1])
                     result = attrb[challengeIdx - 1]
                     result -= 1
                     attrb[challengeIdx - 1] = result
-                    print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2])
+                    print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2], '\n')
                     challengeIdx += 1
                     
                 elif rolled >= 6 + challengeIdx:
@@ -90,11 +92,12 @@ def quest(r1,clean):
                     result = attrb[challengeIdx - 1]
                     result += 1
                     attrb[challengeIdx - 1] = result
-                    print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2])
+                    print('\nStrength =', attrb[0], '| Courage =',attrb[1], '| IQ =', attrb[2], '\n')
                     challengeIdx += 1
                 
             elif roll.lower() == 'giveup':
-                print('Game Over')
+                os.system(clean)
+                print('You gave up. Back to starting screen.')
                 break
                 
             elif roll.lower() != 'roll' or roll.lower() != 'giveup':
