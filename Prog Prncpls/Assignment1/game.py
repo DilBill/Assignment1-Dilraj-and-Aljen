@@ -30,7 +30,7 @@ def quest(r1,clean):
             if roll.lower() == 'roll':
                 rolled = diceRoll()
                 # clears the terminal to allow for a clean display and a better user experince
-                os.system('clean')
+                os.system(clean)
                 # this conditional statement checks whether the player has won or not by comparing their score
                 if rolled < 6 + challengeIdx - 1:
                     # we are printing the outcome of the challenge with the list we created earlier
@@ -71,7 +71,7 @@ def quest(r1,clean):
             
             if roll.lower() == 'roll':
                 rolled = diceRoll()
-                os.system('clean')
+                os.system(clean)
                 
                 if rolled < 6 + challengeIdx - 1:
                     print("\n",outcome[1],'Challenge lost')
