@@ -33,7 +33,7 @@ def quest(r1,clean):
                 os.system(clean)
                 print('You rolled',rolled)
                 # this conditional statement checks whether the player has won or not by comparing their score
-                if rolled < 7 + challengeIdx - 1:
+                if rolled < 6 + challengeIdx - 1:
                     # we are printing the outcome of the challenge with the list we created earlier
                     print("\n",outcome[1])
                     # we now want to change the attrb value down 1 as the user lost the challenge
@@ -84,7 +84,7 @@ def quest(r1,clean):
                 os.system(clean)
                 print("You rolled: ", rolled)
                 
-                if rolled <= 7 + challengeIdx - 1:
+                if rolled < 6 + challengeIdx - 1:
                     print("\n",outcome[1])
                     result = attrb[challengeIdx - 1]
                     result -= 1
